@@ -32,7 +32,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME', '127.0.0.1')]
 
-CORS_TRUSTED_ORIGINS = ['https://'+os.environ.get["RENDER_EXTERNAL_HOSTNAME"]]
+CORS_TRUSTED_ORIGINS = ['https://'+os.environ.get("RENDER_EXTERNAL_HOSTNAME", "localhost")]
 
 
 # Application definition
