@@ -30,10 +30,12 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME', '127.0.0.1')]
+# ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME', '127.0.0.1')]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'stock-prediction-portal-1-leh0.onrender.com', 'stock-prediction-portal-cyan.vercel.app']
 
-CORS_ALLOWED_ORIGINS = ["https://" + os.environ.get("RENDER_EXTERNAL_HOSTNAME")]
+CORS_ALLOWED_ORIGINS = ['https://stock-prediction-portal-cyan.vercel.app', 'http://localhost:5173']
 
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -150,10 +152,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173'
-]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
