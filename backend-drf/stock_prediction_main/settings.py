@@ -169,4 +169,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
 
 # Add this to allow serving files from /media/
-WHITENOISE_ROOT = os.path.join(BASE_DIR, 'media')
+# WHITENOISE_ROOT = os.path.join(BASE_DIR, 'media')
+WHITENOISE_ROOT = BASE_DIR
