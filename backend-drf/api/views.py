@@ -79,7 +79,9 @@ class StockPredictionAPIView(APIView):
             scaler = MinMaxScaler(feature_range=(0,1))
 
             # Load ML Model
-            model = load_model('stock_prediction_model.keras')
+            model_path = os.path.join(settings.BASE_DIR, 'stock_prediction_model.keras')
+            model = load_model(model_path)
+            # model = load_model('stock_prediction_model.keras')
 
             # Preparing Test Data
             past_100_days = data_training.tail(100)
